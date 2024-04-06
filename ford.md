@@ -5,11 +5,11 @@ src_dir: src
 output_dir: docs/ford_output
 project: structblas
 summary: BLAS with Structured Matrices
-project_github: https://github.com/Cirdans-Home/fox-wright
+project_github: https://github.com/Cirdans-Home/structblas
 project_download:
 author: Fabio Durastante
 author_email: fabio.durastante@unipi.it
-github: https://github.com/Cirdans-Home/fox-wright
+github: https://github.com/Cirdans-Home/structblas
 media_dir: docs/images
 page_dir: docs/pages
 exclude_dir: archive
