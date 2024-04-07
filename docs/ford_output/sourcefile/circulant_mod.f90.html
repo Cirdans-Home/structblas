@@ -89,7 +89,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="24.2% of total for source files.">140 statements</a>
+    title="22.6% of total for source files.">150 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/circulant_mod.f90"> Source File</a></li>
   </ul>
@@ -299,7 +299,7 @@
 </g>
 </g>
 <!-- sourcefile~circulant.f90&#45;&gt;sourcefile~structblas_mod.f90 -->
-<g id="sourcefile~~circulant_mod.f90~~AfferentGraph_edge5" class="edge">
+<g id="sourcefile~~circulant_mod.f90~~AfferentGraph_edge4" class="edge">
 <title>sourcefile~circulant.f90&#45;&gt;sourcefile~structblas_mod.f90</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M276.34,-54C267.02,-54 256.63,-54 246.3,-54"/>
 <polygon fill="#000000" stroke="#000000" points="246.03,-50.5 236.03,-54 246.03,-57.5 246.03,-50.5"/>
@@ -314,7 +314,7 @@
 </g>
 </g>
 <!-- sourcefile~helloworld.f90&#45;&gt;sourcefile~structblas_mod.f90 -->
-<g id="sourcefile~~circulant_mod.f90~~AfferentGraph_edge4" class="edge">
+<g id="sourcefile~~circulant_mod.f90~~AfferentGraph_edge5" class="edge">
 <title>sourcefile~helloworld.f90&#45;&gt;sourcefile~structblas_mod.f90</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M274.68,-24.04C261.08,-28.6 245.41,-33.87 231.03,-38.7"/>
 <polygon fill="#000000" stroke="#000000" points="229.69,-35.46 221.33,-41.96 231.92,-42.1 229.69,-35.46"/>
@@ -536,49 +536,47 @@
 <a id="ln-153" name="ln-153" href="#ln-153"></a><span class="w">                </span><span class="c">!!</span>
 <a id="ln-154" name="ln-154" href="#ln-154"></a><span class="w">                </span><span class="c">!! If `trans = &#39;T&#39;` then \( \mathbf{y} = \alpha C^T \mathbf{x} + \beta \mathbf{y} \)</span>
 <a id="ln-155" name="ln-155" href="#ln-155"></a><span class="w">                </span><span class="c">!!</span>
-<a id="ln-156" name="ln-156" href="#ln-156"></a>
-<a id="ln-157" name="ln-157" href="#ln-157"></a><span class="w">                </span><span class="c">! if (.not.wehaveaplan) then</span>
-<a id="ln-158" name="ln-158" href="#ln-158"></a><span class="w">                </span><span class="c">!     !! We don&#39;t have a plan and we have to generate them</span>
-<a id="ln-159" name="ln-159" href="#ln-159"></a><span class="w">                </span><span class="c">!     planf_ = fftw_plan_dft_r2c_1d(n,x,forwardvec,FFTW_MEASURE)</span>
-<a id="ln-160" name="ln-160" href="#ln-160"></a><span class="w">                </span><span class="c">!     planb_ = fftw_plan_dft_r2c_1d(n,forwardvec,backvec,FFTW_MEASURE)</span>
-<a id="ln-161" name="ln-161" href="#ln-161"></a><span class="w">                </span><span class="c">! end if</span>
-<a id="ln-162" name="ln-162" href="#ln-162"></a><span class="w">                </span><span class="c">! !! We have FFTWs plan and we can just perform multiplications</span>
-<a id="ln-163" name="ln-163" href="#ln-163"></a><span class="w">                </span><span class="c">! call fftw_execute_dft_r2c(planf_,x,forwardvec)</span>
-<a id="ln-164" name="ln-164" href="#ln-164"></a><span class="w">                </span><span class="c">! do i=1,n/2+1</span>
-<a id="ln-165" name="ln-165" href="#ln-165"></a><span class="w">                </span><span class="c">!     forwardvec(i) = alpha*forwardvec(i)*circm%lambda(i)</span>
-<a id="ln-166" name="ln-166" href="#ln-166"></a><span class="w">                </span><span class="c">! end do</span>
-<a id="ln-167" name="ln-167" href="#ln-167"></a><span class="w">                </span><span class="c">! call fftw_execute_dft_c2r(planb_,forwardvec,backvec)</span>
-<a id="ln-168" name="ln-168" href="#ln-168"></a><span class="w">                </span><span class="c">! y = backvec + x        </span>
-<a id="ln-169" name="ln-169" href="#ln-169"></a><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span><span class="w"></span>
-<a id="ln-170" name="ln-170" href="#ln-170"></a><span class="w">                </span><span class="c">!!</span>
-<a id="ln-171" name="ln-171" href="#ln-171"></a><span class="w">                </span><span class="c">!! If `trans = &#39;N&#39;` then \( \mathbf{y} = \alpha C \mathbf{x} + \beta \mathbf{y} \)</span>
-<a id="ln-172" name="ln-172" href="#ln-172"></a><span class="w">                </span><span class="c">!!</span>
-<a id="ln-173" name="ln-173" href="#ln-173"></a><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">wehaveaplan</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
-<a id="ln-174" name="ln-174" href="#ln-174"></a><span class="w">                    </span><span class="c">! We don&#39;t have a plan and we have to generate them</span>
-<a id="ln-175" name="ln-175" href="#ln-175"></a><span class="w">                    </span><span class="n">planf_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fftw_plan_dft_r2c_1d</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">backvec</span><span class="p">,</span><span class="n">forwardvec</span><span class="p">,</span><span class="n">FFTW_MEASURE</span><span class="p">)</span><span class="w"></span>
-<a id="ln-176" name="ln-176" href="#ln-176"></a><span class="w">                    </span><span class="n">planb_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fftw_plan_dft_c2r_1d</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">forwardvec</span><span class="p">,</span><span class="n">backvec</span><span class="p">,</span><span class="n">FFTW_MEASURE</span><span class="p">)</span><span class="w"></span>
-<a id="ln-177" name="ln-177" href="#ln-177"></a><span class="w">                </span><span class="k">end if</span><span class="w"></span>
-<a id="ln-178" name="ln-178" href="#ln-178"></a><span class="w">                </span><span class="c">! We have FFTWs plan and we can just perform multiplications</span>
-<a id="ln-179" name="ln-179" href="#ln-179"></a><span class="w">                </span><span class="k">call </span><span class="n">fftw_execute_dft_r2c</span><span class="p">(</span><span class="n">planf_</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">forwardvec</span><span class="p">)</span><span class="w"></span>
-<a id="ln-180" name="ln-180" href="#ln-180"></a><span class="w">                </span><span class="c">! write(output_unit,*) &quot;fft(x) = &quot;, forwardvec</span>
-<a id="ln-181" name="ln-181" href="#ln-181"></a><span class="w">                </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="w"></span>
-<a id="ln-182" name="ln-182" href="#ln-182"></a><span class="w">                    </span><span class="n">forwardvec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">forwardvec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">circm</span><span class="p">%</span><span class="n">lambda</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
-<a id="ln-183" name="ln-183" href="#ln-183"></a><span class="w">                </span><span class="k">end do</span>
-<a id="ln-184" name="ln-184" href="#ln-184"></a><span class="k">                call </span><span class="n">fftw_execute_dft_c2r</span><span class="p">(</span><span class="n">planb_</span><span class="p">,</span><span class="n">forwardvec</span><span class="p">,</span><span class="n">backvec</span><span class="p">)</span><span class="w"></span>
-<a id="ln-185" name="ln-185" href="#ln-185"></a><span class="w">                </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alpha</span><span class="o">*</span><span class="n">backvec</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
-<a id="ln-186" name="ln-186" href="#ln-186"></a><span class="w">            </span><span class="k">case </span><span class="n">default</span><span class="w"></span>
-<a id="ln-187" name="ln-187" href="#ln-187"></a><span class="w">                </span><span class="k">write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(&quot;d_circ_genmv: unknown transpose/non-transpose charachter&quot;)&#39;</span><span class="p">)</span><span class="w"></span>
-<a id="ln-188" name="ln-188" href="#ln-188"></a><span class="w">                </span><span class="k">deallocate</span><span class="p">(</span><span class="n">forwardvec</span><span class="p">,</span><span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
-<a id="ln-189" name="ln-189" href="#ln-189"></a><span class="w">                </span><span class="k">deallocate</span><span class="p">(</span><span class="n">backvec</span><span class="p">,</span><span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
-<a id="ln-190" name="ln-190" href="#ln-190"></a><span class="w">                </span><span class="k">return</span>
-<a id="ln-191" name="ln-191" href="#ln-191"></a><span class="k">            end select</span>
-<a id="ln-192" name="ln-192" href="#ln-192"></a>
-<a id="ln-193" name="ln-193" href="#ln-193"></a><span class="k">            deallocate</span><span class="p">(</span><span class="n">forwardvec</span><span class="p">,</span><span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
-<a id="ln-194" name="ln-194" href="#ln-194"></a><span class="w">            </span><span class="k">deallocate</span><span class="p">(</span><span class="n">backvec</span><span class="p">,</span><span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
-<a id="ln-195" name="ln-195" href="#ln-195"></a>
-<a id="ln-196" name="ln-196" href="#ln-196"></a><span class="w">        </span><span class="k">end subroutine</span>
-<a id="ln-197" name="ln-197" href="#ln-197"></a><span class="k">    </span>
-<a id="ln-198" name="ln-198" href="#ln-198"></a><span class="k">end module </span><span class="n">circulant_mod</span><span class="w"></span>
+<a id="ln-156" name="ln-156" href="#ln-156"></a><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">wehaveaplan</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<a id="ln-157" name="ln-157" href="#ln-157"></a><span class="w">                    </span><span class="c">! We don&#39;t have a plan and we have to generate them</span>
+<a id="ln-158" name="ln-158" href="#ln-158"></a><span class="w">                    </span><span class="n">planf_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fftw_plan_dft_r2c_1d</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">backvec</span><span class="p">,</span><span class="n">forwardvec</span><span class="p">,</span><span class="n">FFTW_MEASURE</span><span class="p">)</span><span class="w"></span>
+<a id="ln-159" name="ln-159" href="#ln-159"></a><span class="w">                    </span><span class="n">planb_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fftw_plan_dft_c2r_1d</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">forwardvec</span><span class="p">,</span><span class="n">backvec</span><span class="p">,</span><span class="n">FFTW_MEASURE</span><span class="p">)</span><span class="w"></span>
+<a id="ln-160" name="ln-160" href="#ln-160"></a><span class="w">                </span><span class="k">end if</span><span class="w"></span>
+<a id="ln-161" name="ln-161" href="#ln-161"></a><span class="w">                </span><span class="c">! We have FFTWs plan and we can just perform multiplications</span>
+<a id="ln-162" name="ln-162" href="#ln-162"></a><span class="w">                </span><span class="k">call </span><span class="n">fftw_execute_dft_r2c</span><span class="p">(</span><span class="n">planf_</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">forwardvec</span><span class="p">)</span><span class="w"></span>
+<a id="ln-163" name="ln-163" href="#ln-163"></a><span class="w">                </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="w"></span>
+<a id="ln-164" name="ln-164" href="#ln-164"></a><span class="w">                    </span><span class="n">forwardvec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">forwardvec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="nb">conjg</span><span class="p">(</span><span class="n">circm</span><span class="p">%</span><span class="n">lambda</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="w"></span>
+<a id="ln-165" name="ln-165" href="#ln-165"></a><span class="w">                </span><span class="k">end do</span>
+<a id="ln-166" name="ln-166" href="#ln-166"></a><span class="k">                call </span><span class="n">fftw_execute_dft_c2r</span><span class="p">(</span><span class="n">planb_</span><span class="p">,</span><span class="n">forwardvec</span><span class="p">,</span><span class="n">backvec</span><span class="p">)</span><span class="w"></span>
+<a id="ln-167" name="ln-167" href="#ln-167"></a><span class="w">                </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alpha</span><span class="o">*</span><span class="n">backvec</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
+<a id="ln-168" name="ln-168" href="#ln-168"></a><span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span><span class="w"></span>
+<a id="ln-169" name="ln-169" href="#ln-169"></a><span class="w">                </span><span class="c">!!</span>
+<a id="ln-170" name="ln-170" href="#ln-170"></a><span class="w">                </span><span class="c">!! If `trans = &#39;N&#39;` then \( \mathbf{y} = \alpha C \mathbf{x} + \beta \mathbf{y} \)</span>
+<a id="ln-171" name="ln-171" href="#ln-171"></a><span class="w">                </span><span class="c">!!</span>
+<a id="ln-172" name="ln-172" href="#ln-172"></a><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="n">wehaveaplan</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<a id="ln-173" name="ln-173" href="#ln-173"></a><span class="w">                    </span><span class="c">! We don&#39;t have a plan and we have to generate them</span>
+<a id="ln-174" name="ln-174" href="#ln-174"></a><span class="w">                    </span><span class="n">planf_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fftw_plan_dft_r2c_1d</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">backvec</span><span class="p">,</span><span class="n">forwardvec</span><span class="p">,</span><span class="n">FFTW_MEASURE</span><span class="p">)</span><span class="w"></span>
+<a id="ln-175" name="ln-175" href="#ln-175"></a><span class="w">                    </span><span class="n">planb_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fftw_plan_dft_c2r_1d</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">forwardvec</span><span class="p">,</span><span class="n">backvec</span><span class="p">,</span><span class="n">FFTW_MEASURE</span><span class="p">)</span><span class="w"></span>
+<a id="ln-176" name="ln-176" href="#ln-176"></a><span class="w">                </span><span class="k">end if</span><span class="w"></span>
+<a id="ln-177" name="ln-177" href="#ln-177"></a><span class="w">                </span><span class="c">! We have FFTWs plan and we can just perform multiplications</span>
+<a id="ln-178" name="ln-178" href="#ln-178"></a><span class="w">                </span><span class="k">call </span><span class="n">fftw_execute_dft_r2c</span><span class="p">(</span><span class="n">planf_</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">forwardvec</span><span class="p">)</span><span class="w"></span>
+<a id="ln-179" name="ln-179" href="#ln-179"></a><span class="w">                </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="w"></span>
+<a id="ln-180" name="ln-180" href="#ln-180"></a><span class="w">                    </span><span class="n">forwardvec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">forwardvec</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">circm</span><span class="p">%</span><span class="n">lambda</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<a id="ln-181" name="ln-181" href="#ln-181"></a><span class="w">                </span><span class="k">end do</span>
+<a id="ln-182" name="ln-182" href="#ln-182"></a><span class="k">                call </span><span class="n">fftw_execute_dft_c2r</span><span class="p">(</span><span class="n">planb_</span><span class="p">,</span><span class="n">forwardvec</span><span class="p">,</span><span class="n">backvec</span><span class="p">)</span><span class="w"></span>
+<a id="ln-183" name="ln-183" href="#ln-183"></a><span class="w">                </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alpha</span><span class="o">*</span><span class="n">backvec</span><span class="o">/</span><span class="kt">real</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
+<a id="ln-184" name="ln-184" href="#ln-184"></a><span class="w">            </span><span class="k">case </span><span class="n">default</span><span class="w"></span>
+<a id="ln-185" name="ln-185" href="#ln-185"></a><span class="w">                </span><span class="k">write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(&quot;d_circ_genmv: unknown transpose/non-transpose charachter&quot;)&#39;</span><span class="p">)</span><span class="w"></span>
+<a id="ln-186" name="ln-186" href="#ln-186"></a><span class="w">                </span><span class="k">deallocate</span><span class="p">(</span><span class="n">forwardvec</span><span class="p">,</span><span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
+<a id="ln-187" name="ln-187" href="#ln-187"></a><span class="w">                </span><span class="k">deallocate</span><span class="p">(</span><span class="n">backvec</span><span class="p">,</span><span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
+<a id="ln-188" name="ln-188" href="#ln-188"></a><span class="w">                </span><span class="k">return</span>
+<a id="ln-189" name="ln-189" href="#ln-189"></a><span class="k">            end select</span>
+<a id="ln-190" name="ln-190" href="#ln-190"></a>
+<a id="ln-191" name="ln-191" href="#ln-191"></a><span class="k">            deallocate</span><span class="p">(</span><span class="n">forwardvec</span><span class="p">,</span><span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
+<a id="ln-192" name="ln-192" href="#ln-192"></a><span class="w">            </span><span class="k">deallocate</span><span class="p">(</span><span class="n">backvec</span><span class="p">,</span><span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
+<a id="ln-193" name="ln-193" href="#ln-193"></a>
+<a id="ln-194" name="ln-194" href="#ln-194"></a><span class="w">        </span><span class="k">end subroutine</span>
+<a id="ln-195" name="ln-195" href="#ln-195"></a><span class="k">    </span>
+<a id="ln-196" name="ln-196" href="#ln-196"></a><span class="k">end module </span><span class="n">circulant_mod</span><span class="w"></span>
 </pre></div>
 
     </section>
@@ -597,7 +595,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-04-07 00:04            </p>
+ on 2024-04-07 19:15            </p>
         </div>
       </div>
       <br>

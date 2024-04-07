@@ -19,13 +19,15 @@ program circulant
         test("build_1", test_build_1),&
         test("build_2", test_build_2),&
         test("tomat", test_tomat),&
-        test("dgemv",test_dgemv)&
+        test("dgemv_1",test_dgemv_1),&
+        test("dgemv_2",test_dgemv_2)&
     ]&
     )
 
 contains
 
         subroutine test_setc_1()
+            !! Test the routine to create a Circulant matrix by giving it the first column
             implicit none
             type(dcirculant) :: c1
             real(kind=real64), dimension(:), allocatable :: cvec
@@ -47,6 +49,8 @@ contains
         end subroutine test_setc_1
 
         subroutine test_setc_2()
+            !! Test the routine to create a Circulant matrix by giving it the first column and
+            !! a smaller value for the size
             implicit none
             type(dcirculant) :: c1
             real(kind=real64), dimension(:), allocatable :: cvec
@@ -69,6 +73,8 @@ contains
         end subroutine test_setc_2
 
         subroutine test_setc_3()
+            !! Test the routine to create a Circulant matrix by giving it the first column and
+            !! a larger value for the size
             implicit none
             type(dcirculant) :: c1
             real(kind=real64), dimension(:), allocatable :: cvec
@@ -91,6 +97,7 @@ contains
         end subroutine test_setc_3
 
         subroutine test_setlambda_1()
+            !! Test the routine to create a Circulant matrix by giving it its eigenvalue
             implicit none
             type(dcirculant) :: c1
             complex(kind=real64), dimension(:), allocatable :: lambda
@@ -115,6 +122,7 @@ contains
         end subroutine test_setlambda_1
 
         subroutine test_build_1()
+            !! Test the routine to build a Circulant matrix from the `c` vector
             implicit none
             type(dcirculant) :: c1
             real(kind=real64), dimension(:), allocatable :: cvec
@@ -137,6 +145,7 @@ contains
         end subroutine test_build_1
 
         subroutine test_build_2()
+            !! Test the routine to build a Circulant matrix from the `lambda` vector
             implicit none
             type(dcirculant) :: c1
             complex(kind=real64), dimension(:), allocatable :: lambda
@@ -188,6 +197,7 @@ contains
         end subroutine test_build_2
 
         subroutine test_tomat()
+            !! Test the creation of a dense matrix representation of the circulant matrix
             implicit none
             type(dcirculant) :: c1
             real(kind=real64), dimension(:), allocatable :: cvec
@@ -251,7 +261,8 @@ contains
             call check(is_equal(info,0), msg="circulant free failed")
         end subroutine test_tomat
 
-        subroutine test_dgemv()
+        subroutine test_dgemv_1()
+            !! Test `dgemv` for the matrix-vector multiplication
             implicit none
             type(dcirculant) :: c1
             real(kind=real64) :: alpha, beta
@@ -270,11 +281,9 @@ contains
 
             call random_number(x)
             call random_number(y)
-            !call random_number(alpha)
-            !call random_number(beta)
-            alpha = 1.0
-            beta = 1.0
-             
+            call random_number(alpha)
+            call random_number(beta)
+                         
             do i=1,n
                 do j=1,n
                     if (i-j== 1) then
@@ -340,8 +349,98 @@ contains
             call c1%free(info)
             call check(is_equal(info,0), msg="circulant free failed")
 
-        end subroutine test_dgemv
+        end subroutine test_dgemv_1
 
-    
+        subroutine test_dgemv_2()
+            !! Test `dgemv` for the matrix-vector multiplication, transposed matrix
+            implicit none
+            type(dcirculant) :: c1
+            real(kind=real64) :: alpha, beta
+            real(kind=real64), dimension(:), allocatable :: cvec,x,y,z
+            real(kind=real64), dimension(:,:), allocatable :: mat,controlmat
+            real(kind=real32) :: normfroerr
+            integer(kind=int32) :: info,n,i,j
+            
+            n = 20
+            allocate(cvec(2),stat=info)
+            call check(is_equal(info,0), msg="cvec allocate failed")
+            allocate(controlmat(n,n),stat=info)
+            call check(is_equal(info,0), msg="controlmat allocate failed")
+            allocate(x(n),y(n),z(n),stat=info)
+            call check(is_equal(info,0), msg="x/y/z allocate failed")
+
+            call random_number(x)
+            call random_number(y)
+            call random_number(alpha)
+            call random_number(beta)
+                        
+            do i=1,n
+                do j=1,n
+                    if (i-j== 1) then
+                        controlmat(i,j) = -done
+                    else if (i == j) then
+                        controlmat(i,j) = done
+                    else
+                        controlmat(i,j) = dzero
+                    end if
+                end do
+            end do
+            controlmat(1,n) = -done
+
+            cvec = [1, -1]
+            call c1%setc(cvec,info,n=n)
+            call check(is_equal(info, structblas_success_), msg="setc with n failed")
+            call check(is_equal(size(c1%c),n), msg="setc%c wrong size")
+            
+            call c1%build(info)
+            call check(is_equal(info, structblas_success_), msg="build from c failed")
+            call check(is_equal(size(c1%lambda),n), msg="setc%lambda wrong size")
+
+            call c1%tomat(mat,info)
+            call check(is_equal(info, structblas_success_), msg="tomat failed")            
+
+            normfroerr = dzero
+            do i=1,n
+                do j=1,n
+                    normfroerr = normfroerr + (mat(i,j)-controlmat(i,j))**2
+                end do
+            end do
+            normfroerr = sqrt(normfroerr)
+            if (normfroerr.le.1d1*epsilon(cvec(1))) then
+                info = structblas_success_
+            else
+                info = structblas_fail_
+                write(output_unit,'("(Matrix) Error is ",E16.5)') normfroerr
+            end if
+            call check(is_equal(info,structblas_success_), msg="wrong matrix reconstruction")
+
+            ! Compute the matrix transpose
+            mat = transpose(mat)
+            ! Compute control product
+            z = alpha*matmul(mat,x) + beta*y
+            ! Compute real product
+            call sb_gemv('T', alpha, c1, x, beta, y)
+
+            ! Check the error;
+            normfroerr = dzero
+            do i=1,n
+                normfroerr = normfroerr + (y(i) - z(i))**2                
+            end do
+            normfroerr = sqrt(normfroerr)
+            if (normfroerr.le.1d1*epsilon(cvec(1))) then
+                info = structblas_success_
+            else
+                info = structblas_fail_
+                write(output_unit,'("(Vector) Error is ",E16.5)') normfroerr
+            end if
+            call check(is_equal(info,structblas_success_), msg="wrong vector reconstruction")
+
+            deallocate(cvec,controlmat,x,y,z,stat=info)
+            call check(is_equal(info,0), msg="deallocate failed")
+
+            call c1%free(info)
+            call check(is_equal(info,0), msg="circulant free failed")
+
+        end subroutine test_dgemv_2    
 
 end program circulant

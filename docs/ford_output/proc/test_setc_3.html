@@ -89,7 +89,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 4.9% of total for procedures.">17 statements</a>
+    title=" 3.9% of total for procedures.">17 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/circulant.f90"> Source File</a></li>
   </ul>
@@ -118,10 +118,10 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../proc/test_setc_3.html#variable-c1~6">c1</a>
-      <a class="list-group-item" href="../proc/test_setc_3.html#variable-cvec~5">cvec</a>
-      <a class="list-group-item" href="../proc/test_setc_3.html#variable-info~6">info</a>
-      <a class="list-group-item" href="../proc/test_setc_3.html#variable-n~6">n</a>
+      <a class="list-group-item" href="../proc/test_setc_3.html#variable-c1~7">c1</a>
+      <a class="list-group-item" href="../proc/test_setc_3.html#variable-cvec~6">cvec</a>
+      <a class="list-group-item" href="../proc/test_setc_3.html#variable-info~7">info</a>
+      <a class="list-group-item" href="../proc/test_setc_3.html#variable-n~7">n</a>
     </div>
   </div>
 </div>
@@ -140,6 +140,8 @@
     <h2>subroutine test_setc_3()</h2>
     
 
+    <p>Test the routine to create a Circulant matrix by giving it the first column and
+a larger value for the size</p>
 
     <h3>Arguments</h3>
     <em>None</em>
@@ -263,10 +265,10 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../proc/test_setc_3.html#variable-c1~6">c1</a>
-      <a class="list-group-item" href="../proc/test_setc_3.html#variable-cvec~5">cvec</a>
-      <a class="list-group-item" href="../proc/test_setc_3.html#variable-info~6">info</a>
-      <a class="list-group-item" href="../proc/test_setc_3.html#variable-n~6">n</a>
+      <a class="list-group-item" href="../proc/test_setc_3.html#variable-c1~7">c1</a>
+      <a class="list-group-item" href="../proc/test_setc_3.html#variable-cvec~6">cvec</a>
+      <a class="list-group-item" href="../proc/test_setc_3.html#variable-info~7">info</a>
+      <a class="list-group-item" href="../proc/test_setc_3.html#variable-n~7">n</a>
     </div>
   </div>
 </div>
@@ -287,22 +289,22 @@
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-c1~6"></span>type(<a href='../type/dcirculant.html'>dcirculant</a>),</td>
+  <td><span class="anchor" id="variable-c1~7"></span>type(<a href='../type/dcirculant.html'>dcirculant</a>),</td>
 <td>public</td>  <td></td><td>::</td>
   <td><strong>c1</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-cvec~5"></span>real(kind=real64),</td>
+  <td><span class="anchor" id="variable-cvec~6"></span>real(kind=real64),</td>
 <td>public,</td>  <td>dimension(:), allocatable</td><td>::</td>
   <td><strong>cvec</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-info~6"></span>integer(kind=int32),</td>
+  <td><span class="anchor" id="variable-info~7"></span>integer(kind=int32),</td>
 <td>public</td>  <td></td><td>::</td>
   <td><strong>info</strong></td><td></td><td></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-n~6"></span>integer(kind=int32),</td>
+  <td><span class="anchor" id="variable-n~7"></span>integer(kind=int32),</td>
 <td>public</td>  <td></td><td>::</td>
   <td><strong>n</strong></td><td></td><td></td><td></td>
 </tr>
@@ -322,6 +324,8 @@
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
     <div class="highlight"><pre><span></span><span class="w">        </span><span class="k">subroutine </span><span class="n">test_setc_3</span><span class="p">()</span><span class="w"></span>
+<span class="w">            </span><span class="c">!! Test the routine to create a Circulant matrix by giving it the first column and</span>
+<span class="w">            </span><span class="c">!! a larger value for the size</span>
 <span class="w">            </span><span class="k">implicit none</span>
 <span class="k">            type</span><span class="p">(</span><span class="n">dcirculant</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c1</span><span class="w"></span>
 <span class="w">            </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real64</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cvec</span><span class="w"></span>
@@ -362,7 +366,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-04-07 00:04            </p>
+ on 2024-04-07 19:15            </p>
         </div>
       </div>
       <br>

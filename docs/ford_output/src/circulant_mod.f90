@@ -153,19 +153,18 @@ contains
                 !!
                 !! If `trans = 'T'` then \( \mathbf{y} = \alpha C^T \mathbf{x} + \beta \mathbf{y} \)
                 !!
-
-                ! if (.not.wehaveaplan) then
-                !     !! We don't have a plan and we have to generate them
-                !     planf_ = fftw_plan_dft_r2c_1d(n,x,forwardvec,FFTW_MEASURE)
-                !     planb_ = fftw_plan_dft_r2c_1d(n,forwardvec,backvec,FFTW_MEASURE)
-                ! end if
-                ! !! We have FFTWs plan and we can just perform multiplications
-                ! call fftw_execute_dft_r2c(planf_,x,forwardvec)
-                ! do i=1,n/2+1
-                !     forwardvec(i) = alpha*forwardvec(i)*circm%lambda(i)
-                ! end do
-                ! call fftw_execute_dft_c2r(planb_,forwardvec,backvec)
-                ! y = backvec + x        
+                if (.not.wehaveaplan) then
+                    ! We don't have a plan and we have to generate them
+                    planf_ = fftw_plan_dft_r2c_1d(n,backvec,forwardvec,FFTW_MEASURE)
+                    planb_ = fftw_plan_dft_c2r_1d(n,forwardvec,backvec,FFTW_MEASURE)
+                end if
+                ! We have FFTWs plan and we can just perform multiplications
+                call fftw_execute_dft_r2c(planf_,x,forwardvec)
+                do i=1,n/2+1
+                    forwardvec(i) = forwardvec(i)*conjg(circm%lambda(i))
+                end do
+                call fftw_execute_dft_c2r(planb_,forwardvec,backvec)
+                y = alpha*backvec/real(n) + y
             case ('N')
                 !!
                 !! If `trans = 'N'` then \( \mathbf{y} = \alpha C \mathbf{x} + \beta \mathbf{y} \)
@@ -177,7 +176,6 @@ contains
                 end if
                 ! We have FFTWs plan and we can just perform multiplications
                 call fftw_execute_dft_r2c(planf_,x,forwardvec)
-                ! write(output_unit,*) "fft(x) = ", forwardvec
                 do i=1,n/2+1
                     forwardvec(i) = forwardvec(i)*circm%lambda(i)
                 end do
