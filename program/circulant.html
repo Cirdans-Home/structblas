@@ -88,7 +88,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="96.4% of total for programs.">266 statements</a>
+    title="97.1% of total for programs.">340 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/circulant.f90"> Source File</a></li>
   </ul>
@@ -118,7 +118,8 @@
     <div id="subs-0" class="panel-collapse collapse">
       <a class="list-group-item" href="../program/circulant.html#proc-test_build_1">test_build_1</a>
       <a class="list-group-item" href="../program/circulant.html#proc-test_build_2">test_build_2</a>
-      <a class="list-group-item" href="../program/circulant.html#proc-test_dgemv">test_dgemv</a>
+      <a class="list-group-item" href="../program/circulant.html#proc-test_dgemv_1">test_dgemv_1</a>
+      <a class="list-group-item" href="../program/circulant.html#proc-test_dgemv_2">test_dgemv_2</a>
       <a class="list-group-item" href="../program/circulant.html#proc-test_setc_1">test_setc_1</a>
       <a class="list-group-item" href="../program/circulant.html#proc-test_setc_2">test_setc_2</a>
       <a class="list-group-item" href="../program/circulant.html#proc-test_setc_3">test_setc_3</a>
@@ -147,8 +148,8 @@
       <li class="list-group-item">
   <ul class="list-inline">
     <li><a href="https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html">iso_fortran_env</a></li>
-    <li><a href="http://fortranwiki.org/fortran/show/iso_c_binding">iso_c_binding</a></li>
     <li><a href='../module/structblas_mod.html'>structblas_mod</a></li>
+    <li><a href="http://fortranwiki.org/fortran/show/iso_c_binding">iso_c_binding</a></li>
     <li><a href='../module/structblas_const_mod.html'>structblas_const_mod</a></li>
     <li>fortuno_serial</li>
     <li>fftw_mod</li>
@@ -186,29 +187,32 @@
 <title>program~circulant&#45;&gt;iso_fortran_env</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M414.67,-109.07C370.45,-101.4 278.41,-88.08 200.5,-94"/>
 </g>
-<!-- fortuno_serial -->
+<!-- iso_c_binding -->
 <g id="program~~circulant~~UsesGraph_node3" class="node">
-<title>fortuno_serial</title>
+<title>iso_c_binding</title>
+<g id="a_program~~circulant~~UsesGraph_node3"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
 <polygon fill="#337ab7" stroke="#337ab7" points="375.5,-188 297.5,-188 297.5,-164 375.5,-164 375.5,-188"/>
-<text text-anchor="middle" x="336.5" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fortuno_serial</text>
+<text text-anchor="middle" x="336.5" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_c_binding</text>
+</a>
 </g>
-<!-- program~circulant&#45;&gt;fortuno_serial -->
+</g>
+<!-- program~circulant&#45;&gt;iso_c_binding -->
 <g id="program~~circulant~~UsesGraph_edge2" class="edge">
-<title>program~circulant&#45;&gt;fortuno_serial</title>
+<title>program~circulant&#45;&gt;iso_c_binding</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M423.97,-126.03C411.7,-134.51 394.62,-145.92 379,-155 376.66,-156.36 374.22,-157.72 371.75,-159.07"/>
 <polygon fill="#000000" stroke="#000000" points="369.98,-156.04 362.77,-163.8 373.25,-162.23 369.98,-156.04"/>
 </g>
-<!-- fftw_mod -->
+<!-- fortuno_serial -->
 <g id="program~~circulant~~UsesGraph_node4" class="node">
-<title>fftw_mod</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="364.5,-146 308.5,-146 308.5,-122 364.5,-122 364.5,-146"/>
-<text text-anchor="middle" x="336.5" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fftw_mod</text>
+<title>fortuno_serial</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="375.5,-146 297.5,-146 297.5,-122 375.5,-122 375.5,-146"/>
+<text text-anchor="middle" x="336.5" y="-131.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fortuno_serial</text>
 </g>
-<!-- program~circulant&#45;&gt;fftw_mod -->
-<g id="program~~circulant~~UsesGraph_edge4" class="edge">
-<title>program~circulant&#45;&gt;fftw_mod</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M414.88,-119.05C402.67,-121.41 387.9,-124.26 374.56,-126.84"/>
-<polygon fill="#000000" stroke="#000000" points="373.85,-123.41 364.69,-128.75 375.18,-130.28 373.85,-123.41"/>
+<!-- program~circulant&#45;&gt;fortuno_serial -->
+<g id="program~~circulant~~UsesGraph_edge3" class="edge">
+<title>program~circulant&#45;&gt;fortuno_serial</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M414.88,-119.05C405.99,-120.77 395.75,-122.74 385.68,-124.69"/>
+<polygon fill="#000000" stroke="#000000" points="384.89,-121.28 375.74,-126.61 386.22,-128.15 384.89,-121.28"/>
 </g>
 <!-- module~structblas_mod -->
 <g id="program~~circulant~~UsesGraph_node5" class="node">
@@ -220,7 +224,7 @@
 </g>
 </g>
 <!-- program~circulant&#45;&gt;module~structblas_mod -->
-<g id="program~~circulant~~UsesGraph_edge3" class="edge">
+<g id="program~~circulant~~UsesGraph_edge4" class="edge">
 <title>program~circulant&#45;&gt;module~structblas_mod</title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M420.06,-101.86C404.9,-93.07 384.21,-81.08 367.34,-71.3"/>
 <polygon fill="#000000" stroke="#000000" points="368.82,-68.11 358.41,-66.12 365.31,-74.17 368.82,-68.11"/>
@@ -240,20 +244,17 @@
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M436.2,-126.17C427.88,-145.38 408.75,-182.09 379,-197 333.64,-219.73 273.96,-204.75 236.4,-190.76"/>
 <polygon fill="#000000" stroke="#000000" points="237.48,-187.43 226.89,-187.07 234.94,-193.95 237.48,-187.43"/>
 </g>
-<!-- iso_c_binding -->
+<!-- fftw_mod -->
 <g id="program~~circulant~~UsesGraph_node7" class="node">
-<title>iso_c_binding</title>
-<g id="a_program~~circulant~~UsesGraph_node7"><a xlink:href="http://fortranwiki.org/fortran/show/iso_c_binding" xlink:title="iso_c_binding">
-<polygon fill="#337ab7" stroke="#337ab7" points="375.5,-24 297.5,-24 297.5,0 375.5,0 375.5,-24"/>
-<text text-anchor="middle" x="336.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_c_binding</text>
-</a>
+<title>fftw_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="364.5,-24 308.5,-24 308.5,0 364.5,0 364.5,-24"/>
+<text text-anchor="middle" x="336.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fftw_mod</text>
 </g>
-</g>
-<!-- program~circulant&#45;&gt;iso_c_binding -->
+<!-- program~circulant&#45;&gt;fftw_mod -->
 <g id="program~~circulant~~UsesGraph_edge6" class="edge">
-<title>program~circulant&#45;&gt;iso_c_binding</title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M434.17,-101.92C423.98,-84.78 403.39,-53.25 379,-33 377.51,-31.76 375.93,-30.57 374.3,-29.43"/>
-<polygon fill="#000000" stroke="#000000" points="376.15,-26.46 365.81,-24.15 372.45,-32.4 376.15,-26.46"/>
+<title>program~circulant&#45;&gt;fftw_mod</title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M434.17,-101.92C423.98,-84.78 403.39,-53.25 379,-33 377.23,-31.53 375.35,-30.13 373.39,-28.8"/>
+<polygon fill="#000000" stroke="#000000" points="374.87,-25.61 364.5,-23.43 371.25,-31.6 374.87,-25.61"/>
 </g>
 <!-- module~structblas_mod&#45;&gt;iso_fortran_env -->
 <g id="program~~circulant~~UsesGraph_edge7" class="edge">
@@ -490,7 +491,8 @@ Fortuno library for performing unit tests</p>
     <div id="subs-1" class="panel-collapse collapse">
       <a class="list-group-item" href="../program/circulant.html#proc-test_build_1">test_build_1</a>
       <a class="list-group-item" href="../program/circulant.html#proc-test_build_2">test_build_2</a>
-      <a class="list-group-item" href="../program/circulant.html#proc-test_dgemv">test_dgemv</a>
+      <a class="list-group-item" href="../program/circulant.html#proc-test_dgemv_1">test_dgemv_1</a>
+      <a class="list-group-item" href="../program/circulant.html#proc-test_dgemv_2">test_dgemv_2</a>
       <a class="list-group-item" href="../program/circulant.html#proc-test_setc_1">test_setc_1</a>
       <a class="list-group-item" href="../program/circulant.html#proc-test_setc_2">test_setc_2</a>
       <a class="list-group-item" href="../program/circulant.html#proc-test_setc_3">test_setc_3</a>
@@ -522,7 +524,9 @@ Fortuno library for performing unit tests</p>
       <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-test_build_1"></span><h3>subroutine <a href='../proc/test_build_1.html'>test_build_1</a>()</h3></div>
   <div class="panel-body">
-           
+       
+<p>Test the routine to build a Circulant matrix from the <code>c</code> vector</p>
+    
 <h4>Arguments</h4>      <em>None</em>
 
   </div>
@@ -531,16 +535,31 @@ Fortuno library for performing unit tests</p>
       <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-test_build_2"></span><h3>subroutine <a href='../proc/test_build_2.html'>test_build_2</a>()</h3></div>
   <div class="panel-body">
-           
+       
+<p>Test the routine to build a Circulant matrix from the <code>lambda</code> vector</p>
+    
 <h4>Arguments</h4>      <em>None</em>
 
   </div>
   </div>
 
       <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-test_dgemv"></span><h3>subroutine <a href='../proc/test_dgemv.html'>test_dgemv</a>()</h3></div>
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_dgemv_1"></span><h3>subroutine <a href='../proc/test_dgemv_1.html'>test_dgemv_1</a>()</h3></div>
   <div class="panel-body">
-           
+       
+<p>Test <code>dgemv</code> for the matrix-vector multiplication</p>
+    
+<h4>Arguments</h4>      <em>None</em>
+
+  </div>
+  </div>
+
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_dgemv_2"></span><h3>subroutine <a href='../proc/test_dgemv_2.html'>test_dgemv_2</a>()</h3></div>
+  <div class="panel-body">
+       
+<p>Test <code>dgemv</code> for the matrix-vector multiplication, transposed matrix</p>
+    
 <h4>Arguments</h4>      <em>None</em>
 
   </div>
@@ -549,7 +568,9 @@ Fortuno library for performing unit tests</p>
       <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-test_setc_1"></span><h3>subroutine <a href='../proc/test_setc_1.html'>test_setc_1</a>()</h3></div>
   <div class="panel-body">
-           
+       
+<p>Test the routine to create a Circulant matrix by giving it the first column</p>
+    
 <h4>Arguments</h4>      <em>None</em>
 
   </div>
@@ -558,7 +579,10 @@ Fortuno library for performing unit tests</p>
       <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-test_setc_2"></span><h3>subroutine <a href='../proc/test_setc_2.html'>test_setc_2</a>()</h3></div>
   <div class="panel-body">
-           
+       
+<p>Test the routine to create a Circulant matrix by giving it the first column and
+a smaller value for the size</p>
+    
 <h4>Arguments</h4>      <em>None</em>
 
   </div>
@@ -567,7 +591,10 @@ Fortuno library for performing unit tests</p>
       <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-test_setc_3"></span><h3>subroutine <a href='../proc/test_setc_3.html'>test_setc_3</a>()</h3></div>
   <div class="panel-body">
-           
+       
+<p>Test the routine to create a Circulant matrix by giving it the first column and
+a larger value for the size</p>
+    
 <h4>Arguments</h4>      <em>None</em>
 
   </div>
@@ -576,7 +603,9 @@ Fortuno library for performing unit tests</p>
       <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-test_setlambda_1"></span><h3>subroutine <a href='../proc/test_setlambda_1.html'>test_setlambda_1</a>()</h3></div>
   <div class="panel-body">
-           
+       
+<p>Test the routine to create a Circulant matrix by giving it its eigenvalue</p>
+    
 <h4>Arguments</h4>      <em>None</em>
 
   </div>
@@ -585,7 +614,9 @@ Fortuno library for performing unit tests</p>
       <div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="proc-test_tomat"></span><h3>subroutine <a href='../proc/test_tomat.html'>test_tomat</a>()</h3></div>
   <div class="panel-body">
-           
+       
+<p>Test the creation of a dense matrix representation of the circulant matrix</p>
+    
 <h4>Arguments</h4>      <em>None</em>
 
   </div>
@@ -616,13 +647,15 @@ Fortuno library for performing unit tests</p>
 <span class="w">        </span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;build_1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">test_build_1</span><span class="p">),&amp;</span><span class="w"></span>
 <span class="w">        </span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;build_2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">test_build_2</span><span class="p">),&amp;</span><span class="w"></span>
 <span class="w">        </span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;tomat&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">test_tomat</span><span class="p">),&amp;</span><span class="w"></span>
-<span class="w">        </span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;dgemv&quot;</span><span class="p">,</span><span class="n">test_dgemv</span><span class="p">)&amp;</span><span class="w"></span>
+<span class="w">        </span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;dgemv_1&quot;</span><span class="p">,</span><span class="n">test_dgemv_1</span><span class="p">),&amp;</span><span class="w"></span>
+<span class="w">        </span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;dgemv_2&quot;</span><span class="p">,</span><span class="n">test_dgemv_2</span><span class="p">)&amp;</span><span class="w"></span>
 <span class="w">    </span><span class="p">]&amp;</span><span class="w"></span>
 <span class="w">    </span><span class="p">)</span><span class="w"></span>
 
 <span class="k">contains</span>
 
 <span class="k">        subroutine </span><span class="n">test_setc_1</span><span class="p">()</span><span class="w"></span>
+<span class="w">            </span><span class="c">!! Test the routine to create a Circulant matrix by giving it the first column</span>
 <span class="w">            </span><span class="k">implicit none</span>
 <span class="k">            type</span><span class="p">(</span><span class="n">dcirculant</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c1</span><span class="w"></span>
 <span class="w">            </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real64</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cvec</span><span class="w"></span>
@@ -644,6 +677,8 @@ Fortuno library for performing unit tests</p>
 <span class="w">        </span><span class="k">end subroutine </span><span class="n">test_setc_1</span><span class="w"></span>
 
 <span class="w">        </span><span class="k">subroutine </span><span class="n">test_setc_2</span><span class="p">()</span><span class="w"></span>
+<span class="w">            </span><span class="c">!! Test the routine to create a Circulant matrix by giving it the first column and</span>
+<span class="w">            </span><span class="c">!! a smaller value for the size</span>
 <span class="w">            </span><span class="k">implicit none</span>
 <span class="k">            type</span><span class="p">(</span><span class="n">dcirculant</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c1</span><span class="w"></span>
 <span class="w">            </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real64</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cvec</span><span class="w"></span>
@@ -666,6 +701,8 @@ Fortuno library for performing unit tests</p>
 <span class="w">        </span><span class="k">end subroutine </span><span class="n">test_setc_2</span><span class="w"></span>
 
 <span class="w">        </span><span class="k">subroutine </span><span class="n">test_setc_3</span><span class="p">()</span><span class="w"></span>
+<span class="w">            </span><span class="c">!! Test the routine to create a Circulant matrix by giving it the first column and</span>
+<span class="w">            </span><span class="c">!! a larger value for the size</span>
 <span class="w">            </span><span class="k">implicit none</span>
 <span class="k">            type</span><span class="p">(</span><span class="n">dcirculant</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c1</span><span class="w"></span>
 <span class="w">            </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real64</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cvec</span><span class="w"></span>
@@ -688,6 +725,7 @@ Fortuno library for performing unit tests</p>
 <span class="w">        </span><span class="k">end subroutine </span><span class="n">test_setc_3</span><span class="w"></span>
 
 <span class="w">        </span><span class="k">subroutine </span><span class="n">test_setlambda_1</span><span class="p">()</span><span class="w"></span>
+<span class="w">            </span><span class="c">!! Test the routine to create a Circulant matrix by giving it its eigenvalue</span>
 <span class="w">            </span><span class="k">implicit none</span>
 <span class="k">            type</span><span class="p">(</span><span class="n">dcirculant</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c1</span><span class="w"></span>
 <span class="w">            </span><span class="kt">complex</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real64</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lambda</span><span class="w"></span>
@@ -712,6 +750,7 @@ Fortuno library for performing unit tests</p>
 <span class="w">        </span><span class="k">end subroutine </span><span class="n">test_setlambda_1</span><span class="w"></span>
 
 <span class="w">        </span><span class="k">subroutine </span><span class="n">test_build_1</span><span class="p">()</span><span class="w"></span>
+<span class="w">            </span><span class="c">!! Test the routine to build a Circulant matrix from the `c` vector</span>
 <span class="w">            </span><span class="k">implicit none</span>
 <span class="k">            type</span><span class="p">(</span><span class="n">dcirculant</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c1</span><span class="w"></span>
 <span class="w">            </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real64</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cvec</span><span class="w"></span>
@@ -734,6 +773,7 @@ Fortuno library for performing unit tests</p>
 <span class="w">        </span><span class="k">end subroutine </span><span class="n">test_build_1</span><span class="w"></span>
 
 <span class="w">        </span><span class="k">subroutine </span><span class="n">test_build_2</span><span class="p">()</span><span class="w"></span>
+<span class="w">            </span><span class="c">!! Test the routine to build a Circulant matrix from the `lambda` vector</span>
 <span class="w">            </span><span class="k">implicit none</span>
 <span class="k">            type</span><span class="p">(</span><span class="n">dcirculant</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c1</span><span class="w"></span>
 <span class="w">            </span><span class="kt">complex</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real64</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lambda</span><span class="w"></span>
@@ -785,6 +825,7 @@ Fortuno library for performing unit tests</p>
 <span class="w">        </span><span class="k">end subroutine </span><span class="n">test_build_2</span><span class="w"></span>
 
 <span class="w">        </span><span class="k">subroutine </span><span class="n">test_tomat</span><span class="p">()</span><span class="w"></span>
+<span class="w">            </span><span class="c">!! Test the creation of a dense matrix representation of the circulant matrix</span>
 <span class="w">            </span><span class="k">implicit none</span>
 <span class="k">            type</span><span class="p">(</span><span class="n">dcirculant</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c1</span><span class="w"></span>
 <span class="w">            </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real64</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cvec</span><span class="w"></span>
@@ -848,7 +889,8 @@ Fortuno library for performing unit tests</p>
 <span class="w">            </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;circulant free failed&quot;</span><span class="p">)</span><span class="w"></span>
 <span class="w">        </span><span class="k">end subroutine </span><span class="n">test_tomat</span><span class="w"></span>
 
-<span class="w">        </span><span class="k">subroutine </span><span class="n">test_dgemv</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="k">subroutine </span><span class="n">test_dgemv_1</span><span class="p">()</span><span class="w"></span>
+<span class="w">            </span><span class="c">!! Test `dgemv` for the matrix-vector multiplication</span>
 <span class="w">            </span><span class="k">implicit none</span>
 <span class="k">            type</span><span class="p">(</span><span class="n">dcirculant</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c1</span><span class="w"></span>
 <span class="w">            </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real64</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="w"></span>
@@ -867,11 +909,9 @@ Fortuno library for performing unit tests</p>
 
 <span class="w">            </span><span class="k">call </span><span class="nb">random_number</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"></span>
 <span class="w">            </span><span class="k">call </span><span class="nb">random_number</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="c">!call random_number(alpha)</span>
-<span class="w">            </span><span class="c">!call random_number(beta)</span>
-<span class="w">            </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"></span>
-<span class="w">            </span><span class="n">beta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"></span>
-<span class="w">             </span>
+<span class="w">            </span><span class="k">call </span><span class="nb">random_number</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="nb">random_number</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span><span class="w"></span>
+<span class="w">                         </span>
 <span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="w"></span>
 <span class="w">                </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="w"></span>
 <span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
@@ -937,9 +977,99 @@ Fortuno library for performing unit tests</p>
 <span class="w">            </span><span class="k">call </span><span class="n">c1</span><span class="p">%</span><span class="n">free</span><span class="p">(</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
 <span class="w">            </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;circulant free failed&quot;</span><span class="p">)</span><span class="w"></span>
 
-<span class="w">        </span><span class="k">end subroutine </span><span class="n">test_dgemv</span><span class="w"></span>
+<span class="w">        </span><span class="k">end subroutine </span><span class="n">test_dgemv_1</span><span class="w"></span>
 
-<span class="w">    </span>
+<span class="w">        </span><span class="k">subroutine </span><span class="n">test_dgemv_2</span><span class="p">()</span><span class="w"></span>
+<span class="w">            </span><span class="c">!! Test `dgemv` for the matrix-vector multiplication, transposed matrix</span>
+<span class="w">            </span><span class="k">implicit none</span>
+<span class="k">            type</span><span class="p">(</span><span class="n">dcirculant</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c1</span><span class="w"></span>
+<span class="w">            </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real64</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="w"></span>
+<span class="w">            </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real64</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cvec</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="w"></span>
+<span class="w">            </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real64</span><span class="p">),</span><span class="w"> </span><span class="k">dimension</span><span class="p">(:,:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">mat</span><span class="p">,</span><span class="n">controlmat</span><span class="w"></span>
+<span class="w">            </span><span class="kt">real</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">real32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">normfroerr</span><span class="w"></span>
+<span class="w">            </span><span class="kt">integer</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">int32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">info</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="w"></span>
+<span class="w">            </span>
+<span class="w">            </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="w"></span>
+<span class="w">            </span><span class="k">allocate</span><span class="p">(</span><span class="n">cvec</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;cvec allocate failed&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">allocate</span><span class="p">(</span><span class="n">controlmat</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;controlmat allocate failed&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">allocate</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">y</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">z</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;x/y/z allocate failed&quot;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">call </span><span class="nb">random_number</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="nb">random_number</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="nb">random_number</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="nb">random_number</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span><span class="w"></span>
+<span class="w">                        </span>
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="w"></span>
+<span class="w">                </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                        </span><span class="n">controlmat</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">done</span><span class="w"></span>
+<span class="w">                    </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                        </span><span class="n">controlmat</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">done</span><span class="w"></span>
+<span class="w">                    </span><span class="k">else</span>
+<span class="k">                        </span><span class="n">controlmat</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dzero</span><span class="w"></span>
+<span class="w">                    </span><span class="k">end if</span>
+<span class="k">                end do</span>
+<span class="k">            end do</span>
+<span class="k">            </span><span class="n">controlmat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">done</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">cvec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">c1</span><span class="p">%</span><span class="n">setc</span><span class="p">(</span><span class="n">cvec</span><span class="p">,</span><span class="n">info</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">structblas_success_</span><span class="p">),</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;setc with n failed&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">c1</span><span class="p">%</span><span class="n">c</span><span class="p">),</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;setc%c wrong size&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span>
+<span class="w">            </span><span class="k">call </span><span class="n">c1</span><span class="p">%</span><span class="n">build</span><span class="p">(</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">structblas_success_</span><span class="p">),</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;build from c failed&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">c1</span><span class="p">%</span><span class="n">lambda</span><span class="p">),</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;setc%lambda wrong size&quot;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">call </span><span class="n">c1</span><span class="p">%</span><span class="n">tomat</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="n">structblas_success_</span><span class="p">),</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;tomat failed&quot;</span><span class="p">)</span><span class="w">            </span>
+
+<span class="w">            </span><span class="n">normfroerr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dzero</span><span class="w"></span>
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="w"></span>
+<span class="w">                </span><span class="k">do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="w"></span>
+<span class="w">                    </span><span class="n">normfroerr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">normfroerr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">mat</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span><span class="o">-</span><span class="n">controlmat</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="w"></span>
+<span class="w">                </span><span class="k">end do</span>
+<span class="k">            end do</span>
+<span class="k">            </span><span class="n">normfroerr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="n">normfroerr</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">normfroerr</span><span class="p">.</span><span class="n">le</span><span class="p">.</span><span class="mi">1</span><span class="n">d1</span><span class="o">*</span><span class="nb">epsilon</span><span class="p">(</span><span class="n">cvec</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">structblas_success_</span><span class="w"></span>
+<span class="w">            </span><span class="k">else</span>
+<span class="k">                </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">structblas_fail_</span><span class="w"></span>
+<span class="w">                </span><span class="k">write</span><span class="p">(</span><span class="n">output_unit</span><span class="p">,</span><span class="s1">&#39;(&quot;(Matrix) Error is &quot;,E16.5)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">normfroerr</span><span class="w"></span>
+<span class="w">            </span><span class="k">end if</span>
+<span class="k">            call </span><span class="n">check</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="n">structblas_success_</span><span class="p">),</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;wrong matrix reconstruction&quot;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="c">! Compute the matrix transpose</span>
+<span class="w">            </span><span class="n">mat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">transpose</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="c">! Compute control product</span>
+<span class="w">            </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">alpha</span><span class="o">*</span><span class="nb">matmul</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">beta</span><span class="o">*</span><span class="n">y</span><span class="w"></span>
+<span class="w">            </span><span class="c">! Compute real product</span>
+<span class="w">            </span><span class="k">call </span><span class="n">sb_gemv</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="c">! Check the error;</span>
+<span class="w">            </span><span class="n">normfroerr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dzero</span><span class="w"></span>
+<span class="w">            </span><span class="k">do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="w"></span>
+<span class="w">                </span><span class="n">normfroerr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">normfroerr</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">z</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="w">                </span>
+<span class="w">            </span><span class="k">end do</span>
+<span class="k">            </span><span class="n">normfroerr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="n">normfroerr</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">normfroerr</span><span class="p">.</span><span class="n">le</span><span class="p">.</span><span class="mi">1</span><span class="n">d1</span><span class="o">*</span><span class="nb">epsilon</span><span class="p">(</span><span class="n">cvec</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">structblas_success_</span><span class="w"></span>
+<span class="w">            </span><span class="k">else</span>
+<span class="k">                </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">structblas_fail_</span><span class="w"></span>
+<span class="w">                </span><span class="k">write</span><span class="p">(</span><span class="n">output_unit</span><span class="p">,</span><span class="s1">&#39;(&quot;(Vector) Error is &quot;,E16.5)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">normfroerr</span><span class="w"></span>
+<span class="w">            </span><span class="k">end if</span>
+<span class="k">            call </span><span class="n">check</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="n">structblas_success_</span><span class="p">),</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;wrong vector reconstruction&quot;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">deallocate</span><span class="p">(</span><span class="n">cvec</span><span class="p">,</span><span class="n">controlmat</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;deallocate failed&quot;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">call </span><span class="n">c1</span><span class="p">%</span><span class="n">free</span><span class="p">(</span><span class="n">info</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">check</span><span class="p">(</span><span class="n">is_equal</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s2">&quot;circulant free failed&quot;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">end subroutine </span><span class="n">test_dgemv_2</span><span class="w">    </span>
 
 <span class="k">end program </span><span class="n">circulant</span><span class="w"></span>
 </pre></div>
@@ -961,7 +1091,7 @@ Fortuno library for performing unit tests</p>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-04-07 00:04            </p>
+ on 2024-04-07 19:15            </p>
         </div>
       </div>
       <br>
